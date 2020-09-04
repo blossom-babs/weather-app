@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #1e202b;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 5%;
+}
+.header .--title {
+  display: flex;
+}
+.header .--title > div:first-of-type {
+  padding-right: 1rem;
+}
+.header .--title .__title {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+@media screen and (min-width: 1200px) {
+  .header .--title .__title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .header .--title .__title {
+    font-size: 5rem;
+  }
+}
+.header .--title .__description {
+  text-transform: capitalize;
+}
+@media screen and (min-width: 1200px) {
+  .header .--title .__description {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .header .--title .__description {
+    font-size: 2rem;
+  }
+}
+
+.search {
+  margin-top: 2rem;
+}
+.search .__form {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+@media screen and (max-width: 500px) {
+  .search .__form {
+    width: 100%;
+  }
+}
+.search .__form input {
+  width: 80%;
+  border-radius: 25px;
+  border: none;
+  padding: 1rem;
+  background-color: #1e202b;
+  color: #ffffff;
+  font-size: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .search .__form input {
+    width: 100%;
+    padding: 0.5rem 2rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .search .__form input {
+    margin-left: -6rem;
+  }
+}
+.search .__form input:focus {
+  outline: none;
+}
+.search .__form button {
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  border-color: #009ad8;
+  background-color: #009ad8;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+@media screen and (max-width: 500px) {
+  .search .__form button {
+    margin-left: 2rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .search .__form button {
+    margin-left: -6rem;
+  }
+}
+.search .__form button:focus {
+  outline: none;
+}
+.search .__bg-img {
+  background-image: url("/assets/weather4.jpg");
+  object-fit: contain;
+  height: 15rem;
+}
+
+.__card {
+  background-color: #262936;
+  margin: 3rem 5%;
+}
+.__card .date {
+  background-color: #1e202b;
+  padding: 1rem;
+}
+.__card .flex {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1000px) {
+  .__card .flex {
+    height: 30vh;
+    align-items: center;
+    padding: 0 5rem;
+  }
+}
+.__card .flex .flex-1 h1 {
+  padding-top: 1rem;
+}
+.__card .flex .flex-2,
+.__card .flex .flex-1 {
+  padding: 1rem;
+}
+.__card .main {
+  background-color: #1e202b;
+  padding: 1rem;
+  border-bottom: 2px solid #262936;
+}
+@media screen and (min-width: 1000px) {
+  .__card .main {
+    border: 2px solid #262936;
+    border-bottom: none;
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

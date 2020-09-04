@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$main-color:#1e202b;
+$white-color: #ffffff;
+$font: 'Roboto',
+sans-serif;
+$hover-color: #0082e6;
+$secondary-color: #262936;
+$accent-color : #009ad8;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: none;
+}
+
+body {
+  font-family: $font;
+  background-color: $main-color;
+  color: white;
+}
+
+// header
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 5%;
+
+  .--title {
+    display: flex;
+
+    &>div:first-of-type {
+      padding-right: 1rem;
+    }
+
+    .__title {
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+      font-size: 1rem;
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.5rem;
+      }
+
+      @media screen and (min-width: 2000px) {
+        font-size: 5rem;
+      }
+    }
+
+    .__description {
+      text-transform: capitalize;
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.5rem;
+      }
+
+      @media screen and (min-width: 2000px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+
+}
+
+// search
+
+.search {
+  margin-top: 2rem;
+
+  .__form {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 4rem;
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+
+    input {
+      width: 80%;
+      border-radius: 25px;
+      border: none;
+      padding: 1rem;
+      background-color: $main-color;
+      color: $white-color;
+      font-size: 1rem;
+
+
+      @media screen and (max-width: 500px) {
+        width: 100%;
+        padding: .5rem 2rem;
+
+      }
+
+      @media screen and (min-width: 1400px) {
+        margin-left: -6rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: 25px;
+      padding: .5rem 1rem;
+      border-color: $accent-color;
+      background-color: $accent-color;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $white-color;
+
+      @media screen and (max-width: 500px) {
+        //width: 30%;
+        margin-left: 2rem;
+        padding: .5rem;
+        font-size: .8rem;
+      }
+
+      @media screen and (min-width: 1400px) {
+        margin-left: -6rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+    }
+
+  }
+
+  .__bg-img {
+    background-image: url('/assets/weather4.jpg');
+    object-fit: contain;
+    height: 15rem;
+  }
+
+
+}
+
+// first card
+
+.__card {
+  background-color: $secondary-color;
+  margin: 3rem 5%;
+
+  .date {
+    background-color: $main-color;
+    padding: 1rem;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width:1000px) {
+      //justify-content: space-evenly;
+      height: 30vh;
+      align-items: center;
+      padding: 0 5rem;
+    }
+
+    .flex-1 h1 {
+      padding-top: 1rem;
+    }
+
+    .flex-2,
+    .flex-1 {
+      padding: 1rem;
+    }
+  }
+
+  .main {
+    background-color: $main-color;
+    padding: 1rem;
+    border-bottom: 2px solid $secondary-color;
+
+    @media screen and (min-width: 1000px) {
+      border: 2px solid $secondary-color;
+      border-bottom: none;
+      font-size: 2rem;
+    }
+  }
+}
