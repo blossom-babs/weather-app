@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#262936">
   <title>Weather App</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/logo (1).png">
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
 </head>
 
 <body>
@@ -33,6 +36,25 @@
   <!-- search container -->
   <div class="search">
     <div class="__bg-img">
+
+      <div class="grid-box">
+        <div class="grid-box-1">
+          <p>+2hr</p>
+          <div><img id="2-hr-img" src="/assets/cloud.svg" alt="" srcset=""></div>
+          <p id="2hr-temp">23&degC</p>
+        </div>
+        <div class="grid-box-2">
+          <p>+4hr</p>
+          <div><img id="4-hr-img" src="/assets/cloud.svg" alt="" srcset=""></div>
+          <p id="4hr-temp">28&degC</p>
+        </div>
+        <div class="grid-box-3">
+          <p>+6hr</p>
+          <div><img id="6-hr-img" src="/assets/rainy.svg" alt="" srcset=""></div>
+          <p id="6hr-temp">30&degC</p>
+        </div>
+      </div>
+
       <form id="form" class="__form">
         <input id="input" type="text" placeholder="What is the weather around me">
         <button id='search-weather' type="submit">Search</button>
@@ -40,18 +62,115 @@
 
       <div class="__card">
         <div class="date">
-          <h2>Fri, 23 Oct</h2>
+          <h2 id="today">Fri, 23 Oct</h2>
         </div>
         <div class="flex">
           <div class="flex-1">
-            <small>New York</small>
-            <h1>23*C</h1>
+            <small id="set-city">Ibadan</small>
+            <h1 id="set-temp">23&deg;C</h1>
           </div>
-          <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          <div class="flex-2"><img id="set-img" src="/assets/sunny-icon.svg" alt=""></div>
         </div>
-        <div class="main">cloudy</div>
+        <div class="main">
+          <h2 id="set-desc">cloudy</h2>
+          <p class="hide">You might wanna take an umbrella out today😬</p>
+
+        </div>
       </div>
       <!--end of the first card section-->
+      <div id="cards" class="cards">
+        <div class="__card">
+          <div class="date">
+            <h2>Fri, 23 Oct</h2>
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <!-- <small>New York</small> -->
+              <h1>23*C</h1>
+            </div>
+            <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          </div>
+          <div class="main">
+            <h2>cloudy</h2>
+          </div>
+        </div>
+        <div class="__card">
+          <div class="date">
+            <h2>Fri, 23 Oct</h2>
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <small>New York</small>
+              <h1>23*C</h1>
+            </div>
+            <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          </div>
+          <div class="main">
+            <h2>cloudy</h2>
+          </div>
+        </div>
+        <div class="__card">
+          <div class="date">
+            <h2>Fri, 23 Oct</h2>
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <small>New York</small>
+              <h1>23*C</h1>
+            </div>
+            <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          </div>
+          <div class="main">
+            <h2>cloudy</h2>
+          </div>
+        </div>
+        <div class="__card">
+          <div class="date">
+            <h2>Fri, 23 Oct</h2>
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <small>New York</small>
+              <h1>23*C</h1>
+            </div>
+            <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          </div>
+          <div class="main">
+            <h2>cloudy</h2>
+          </div>
+        </div>
+        <div class="__card">
+          <div class="date">
+            <h2>Fri, 23 Oct</h2>
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <small>New York</small>
+              <h1>23*C</h1>
+            </div>
+            <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          </div>
+          <div class="main">
+            <h2>cloudy</h2>
+          </div>
+        </div>
+        <div class="__card">
+          <div class="date">
+            <h2>Fri, 23 Oct</h2>
+          </div>
+          <div class="flex">
+            <div class="flex-1">
+              <small>New York</small>
+              <h1>23*C</h1>
+            </div>
+            <div class="flex-2"><img src="/assets/sunny-icon.svg" alt=""></div>
+          </div>
+          <div class="main">
+            <h2>cloudy</h2>
+          </div>
+        </div>
+
+      </div>
     </div>
     <!--the end of the bg image section-->
   </div>

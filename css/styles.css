@@ -116,7 +116,7 @@ body {
 .search .__bg-img {
   background-image: url("/assets/weather4.jpg");
   object-fit: contain;
-  height: 15rem;
+  height: 20rem;
 }
 
 .__card {
@@ -156,6 +156,31 @@ body {
     border-bottom: none;
     font-size: 2rem;
   }
+}
+.__card .main h2 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+.__card .main .hide {
+  padding-top: 1rem;
+  visibility: hidden;
+}
+
+.cards .main h2,
+.cards .date h2 {
+  font-size: 1rem;
+}
+@media screen and (min-width: 1000px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-box {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 4rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
