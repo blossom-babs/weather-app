@@ -117,6 +117,7 @@ body {
   background-image: url("/assets/weather4.jpg");
   object-fit: contain;
   height: 20rem;
+  width: 100%;
 }
 
 .__card {
@@ -166,6 +167,13 @@ body {
   visibility: hidden;
 }
 
+.cards {
+  display: grid;
+}
+.cards .__card {
+  width: 50%;
+  margin: 4rem auto;
+}
 .cards .main h2,
 .cards .date h2 {
   font-size: 1rem;

@@ -17,6 +17,7 @@ const setCity = document.getElementById('set-city')
 const setTemp = document.getElementById('set-temp')
 const setImg = document.getElementById('set-img')
 const setDesc = document.getElementById('set-desc')
+const setNote = document.getElementById('hide')
 
 // set the hourly time
 
@@ -29,7 +30,9 @@ const fourTemp = document.getElementById('4hr-temp')
 const sixTemp = document.getElementById('6hr-temp')
 
 // getting the daily temp
-const cards = document.querySelectorAll('.cards')
+const tempCards = document.querySelectorAll('.__card > .flex > .flex-1 > h1 > span')
+const imgCards = document.querySelectorAll('.__card > .flex > .flex-2 > img')
+const descCards = document.querySelectorAll('.__card > .main> h2')
 
 let cityName;
 
@@ -55,7 +58,10 @@ async function getData() {
     const {
       coord
     } = await data
-    console.log(data)
+    // if there is an error
+    if (data.cod == '404') {
+      city.value = 'CITY NOT FOUND.'
+    }
     // set the temp of the first city
     setTemp.innerHTML = `${data.main.temp}&deg;C`;
     //set image
@@ -63,6 +69,24 @@ async function getData() {
     setImg.src = weatherImg;
     //set the description
     setDesc.innerHTML = data.weather[0].description;
+    //set cute notes
+    let theWeather = data.weather[0].description
+    if (theWeather == 'broken clouds' || theWeather == 'few clouds' || theWeather == 'scattered clouds') {
+      setNote.textContent = `Might rain. Don't forget your umbrella ☂`
+      setNote.style.visibility = 'visible'
+    } else if (theWeather == 'clear sky') {
+      setNote.textContent = `Have the most beautiful day ❤`
+      setNote.style.visibility = 'visible'
+    } else if (theWeather == 'light rain' || theWeather == 'shower rain' || theWeather == 'rain') {
+      setNote.textContent = `Hope you didn't forget your umbrella ☂`
+      setNote.style.visibility = 'visible'
+    } else if (theWeather == 'thunderstorm' || theWeather == 'mist') {
+      setNote.textContent = `Hey. Hope you're in a safe place ❤`
+      setNote.style.visibility = 'visible'
+    } else if (theWeather == 'snow') {
+      setNote.textContent = `Hey. Hope you're keeping warm ☕`
+      setNote.style.visibility = 'visible'
+    }
     // get the coordinates
     let longitude = coord.lon
     let latitude = coord.lat
@@ -73,7 +97,7 @@ async function getData() {
       try {
         const specificsResponse = await fetch(address)
         const specificsData = await specificsResponse.json()
-        console.log(specificsData)
+
 
         // setting the data of two plus hours
         const dataOne = specificsData.hourly[1].temp;
@@ -98,7 +122,40 @@ async function getData() {
 
         // get the daily data
         const weeklyData = specificsData.daily
-        console.log(weeklyData);
+        // a function for the image
+        function getImg(param) {
+          return `http://openweathermap.org/img/wn/${param}@2x.png`;
+        }
+        //first date
+        tempCards[0].innerHTML = weeklyData[0].temp.max
+        let dayOneImg = getImg(weeklyData[0].weather[0].icon)
+        imgCards[1].src = dayOneImg
+        descCards[1].innerHTML = weeklyData[0].weather[0].description
+        // second date
+        tempCards[1].innerHTML = weeklyData[1].temp.max
+        let dayTwoImg = getImg(weeklyData[1].weather[0].icon)
+        imgCards[2].src = dayTwoImg
+        descCards[2].innerHTML = weeklyData[1].weather[0].description
+        // third day
+        tempCards[2].innerHTML = weeklyData[2].temp.max
+        let dayThreeImg = getImg(weeklyData[2].weather[0].icon)
+        imgCards[3].src = dayThreeImg
+        descCards[3].innerHTML = weeklyData[2].weather[0].description
+        // fourth day
+        tempCards[3].innerHTML = weeklyData[3].temp.max
+        let dayFourImg = getImg(weeklyData[3].weather[0].icon)
+        imgCards[4].src = dayFourImg
+        descCards[4].innerHTML = weeklyData[3].weather[0].description
+        // fifth day
+        tempCards[4].innerHTML = weeklyData[4].temp.max
+        let dayFiveImg = getImg(weeklyData[4].weather[0].icon)
+        imgCards[5].src = dayFiveImg
+        descCards[5].innerHTML = weeklyData[4].weather[0].description
+        // sixth day
+        tempCards[5].innerHTML = weeklyData[5].temp.max
+        let daySixImg = getImg(weeklyData[5].weather[0].icon)
+        imgCards[6].src = daySixImg
+        descCards[6].innerHTML = weeklyData[5].weather[0].description
       } catch (error) {
         console.log(error);
       }
@@ -114,3 +171,29 @@ async function getData() {
 // getting and setting the date
 const date = new Date().toDateString()
 today.innerHTML = date
+
+let newCard = document.querySelectorAll('.__card > .date > h2')
+
+function incrementDay(param) {
+  let nextDay = new Date(date)
+  nextDay.setDate(nextDay.getDate() + param)
+  return nextDay = nextDay.toDateString()
+}
+
+let firstDay = incrementDay(1)
+newCard[1].innerHTML = firstDay;
+
+let secondDay = incrementDay(2)
+newCard[2].innerHTML = secondDay;
+
+let thirdDay = incrementDay(3)
+newCard[3].innerHTML = thirdDay;
+
+let fourthDay = incrementDay(4)
+newCard[4].innerHTML = fourthDay;
+
+let fifthDay = incrementDay(5)
+newCard[5].innerHTML = fifthDay;
+
+let sixthDay = incrementDay(6)
+newCard[6].innerHTML = sixthDay;

@@ -137,6 +137,7 @@ body {
     background-image: url('/assets/weather4.jpg');
     object-fit: contain;
     height: 20rem;
+    width: 100%;
   }
 
 
@@ -202,6 +203,14 @@ body {
   // .__card:nth-of-type(even) {
   //   background: $main-color;
   // }
+  display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+
+  .__card {
+    width: 50%;
+    margin: 4rem auto;
+
+  }
 
   .main,
   .date {
